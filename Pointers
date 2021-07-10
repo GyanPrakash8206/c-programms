@@ -1,0 +1,84 @@
+// #include<stdio.h>
+
+
+// int main()
+// {
+    
+//     int number1,number2,m;
+//     int*p,*q;
+//     printf("Enter the numbers: ");
+//     scanf("%d\n %d",&number1,&number2);
+//     p=&number1;
+//     q=&number2;
+//     m=*p* *q;
+//     printf("Multiplication of p & q  is %u\n",m);
+//     return 0;
+// }
+
+// #include<stdio.h>
+
+// int main()
+// {
+//  int  s,i;
+//  char arr1[30],arr2[30],*a, *b;
+  
+//  printf("\n Please Enter the Array Size \n");
+//  scanf("%c", &s);
+//  char *a=arr1[30], *b=arr2[30];
+//  printf("\n Please Enter the Array Elements \n");
+//  for(i = 0; i < s; i++)
+//   {
+//      scanf("%c", &a[i]);
+   
+//   }
+ 
+  
+//  for(i = 0; i < s; i++)
+//   {
+//     b[i] = a[i];
+   
+//   }
+
+//  printf("\n Elements of Second Array are: \n");
+//  for(i = 0; i < s; i++)
+//   {
+//     printf("\n Value Inside Array b[%c] = %c", i, b[i]);
+//   }
+ 
+// return 0;
+// }
+// *************************************code for sorting using pointers*******************************
+#include <stdio.h>
+void main()
+{
+    int size, i, j, temp;
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+    float arr[size];
+    float *ptr = arr;
+    for (i = 0; i < size; i++)
+    {
+        printf("Enter array arr[%d]: ", i + 1);
+        scanf("%f", ptr);
+        ptr++;   
+    }
+    ptr = arr;
+    for(i = 0; i < size; i++)
+    {
+        for(j = i + 1; j < size; j++)
+        {
+            if( *(ptr + i) > *(ptr + j))
+            {
+                temp = *(ptr + i);
+                *(ptr + i) = *(ptr + j);
+                *(ptr + j) = temp;
+            }
+        }
+    }
+    printf("\n The elements in the array after sorting : \n");
+    for(i = 0;i < size;i++)
+    {
+	    printf(" arr[%d] : %0.2f \n", i + 1, *(ptr + i));
+	}         
+    printf("\n");
+}
